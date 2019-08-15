@@ -29,6 +29,7 @@ const useStyles = makeStyles({
 });
 
 const Quote = props => {
+  console.log(props)
   const classes = useStyles();
 
   return (
@@ -47,7 +48,7 @@ const Quote = props => {
         </Typography>
         <Typography variant="body2" component="p" className={classes.changeFont}>
            Season:  <span className={classes.title}>{props.randomquote.season}</span>
-          <br />
+           {"     "}
           Episode: <span className={classes.title}>{props.randomquote.episode}</span>
         </Typography>
       </CardContent>

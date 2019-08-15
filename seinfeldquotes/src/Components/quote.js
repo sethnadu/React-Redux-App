@@ -3,12 +3,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   card: {
-    minWidth: 275,
+    maxWidth: "500px",
+    backgroundColor: "#fcd720",
+    margin: "0 40px 40px 40px"
   },
   bullet: {
     display: "inline-block",
@@ -16,19 +17,22 @@ const useStyles = makeStyles({
     transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14,
+    fontSize: "1.6rem",
+    color: "#e22121"
   },
   pos: {
     marginBottom: 12,
   },
+  changeFont: {
+    fontSize: "1rem"
+  }
 });
 
 const Quote = props => {
-  console.log(props)
   const classes = useStyles();
 
   return (
-    <> {props.randomquote && 
+    <> {props.noStateApi !== true && 
     <Card className={classes.card}>
       <CardContent>
         <Typography
@@ -39,12 +43,12 @@ const Quote = props => {
           {props.randomquote.author}
         </Typography>
         <Typography variant="h5" component="h2">
-          {props.randomquote.quote}
+          "{props.randomquote.quote}"
         </Typography>
-        <Typography variant="body2" component="p">
-           Season:  {props.randomquote.season}
+        <Typography variant="body2" component="p" className={classes.changeFont}>
+           Season:  <span className={classes.title}>{props.randomquote.season}</span>
           <br />
-          Episode :{props.randomquote.episode}
+          Episode: <span className={classes.title}>{props.randomquote.episode}</span>
         </Typography>
       </CardContent>
       <CardActions />

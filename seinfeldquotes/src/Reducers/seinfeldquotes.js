@@ -8,7 +8,8 @@ import {
 const initialState = {
     randomquote: [],
     isLoading: false,
-    error: ""
+    error: "",
+    noStateApi: true
 };
 
 export const randomQuote = ( state = initialState, action) => {
@@ -17,20 +18,23 @@ export const randomQuote = ( state = initialState, action) => {
             return {
                 ...state,
                 isLoading: true,
-                error: ""
+                error: "",
+                noStateApi: true,
             };
         case FETCH_RANDOM_QUOTE_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 randomquote: action.payload,
-                error: ""
+                error: "",
+                noStateApi: false
             };
         case FETCH_RANDOM_QUOTE_FAILURE:
             return {
                 ...state,
                 isLoading: false,
-                error: action.payload
+                error: action.payload,
+                noStateApi: false
             };
         default:
             return state

@@ -64,6 +64,7 @@ export const randomQuote = ( state = initialState, action) => {
                 error: action.payload,
                 noStateApiAll: false
             };
+       
         default:
             return state
     }

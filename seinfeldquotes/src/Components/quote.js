@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 });
 
 const Quote = props => {
-  console.log(props)
+
   const classes = useStyles();
 
   return (
